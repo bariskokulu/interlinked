@@ -17,6 +17,7 @@ public class Baglanti {
 	public DataInputStream gel;
 	public DataOutputStream git;
 	public long tekrarbaglanmadanbekle;
+	public Musteri m;
 
 	public Baglanti(Socket s, boolean gelen, boolean giden) {
 		this.s = s;
@@ -28,6 +29,7 @@ public class Baglanti {
 		} catch (Exception e) {
 			e.printStackTrace();
 			kapat();
+			m.tekrarBaglanmakIstiyonMu();
 		}
 	}
 

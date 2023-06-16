@@ -97,6 +97,7 @@ public class ByteKumesi {
     }
 
     static int utfYaz(String str, ArrayList<Byte> bytelar) {
+    	if(str==null) str = "";
         final int strlen = str.length();
         int utflen = strlen; // optimized for ASCII
 

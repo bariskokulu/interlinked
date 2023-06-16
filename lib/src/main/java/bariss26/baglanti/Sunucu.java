@@ -42,6 +42,7 @@ public class Sunucu extends DinleyicimVar {
 							GenclikVeSporBakani.baglantiKuruldu(Sunucu.this, b);
 						} catch (Exception e) {
 							e.printStackTrace();
+							if(b!=null) b.kapat();
 							GenclikVeSporBakani.baglantiHatasi(Sunucu.this, b, e);
 						}
 					}

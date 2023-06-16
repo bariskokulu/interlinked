@@ -31,6 +31,7 @@ public class Musteri extends DinleyicimVar {
 						b.s.close();
 					}
 					b = new Baglanti(new Socket(ip, port), gelen, giden);
+					b.m = Musteri.this;
 					GenclikVeSporBakani.baglantiKuruldu(Musteri.this, b);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -68,6 +69,10 @@ public class Musteri extends DinleyicimVar {
 
 	public void yeniDinleyici(Dinleyici d) {
 		dinleyiciler.add(d);
+	}
+	
+	public void paketGonder(Paket p) {
+		if(b!=null) b.paketGonder(p);
 	}
 
 

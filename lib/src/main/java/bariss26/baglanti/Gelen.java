@@ -22,6 +22,7 @@ public class Gelen extends Thread {
 		} catch (IOException e) {
 			e.printStackTrace();
 			b.kapat();
+			b.m.tekrarBaglanmakIstiyonMu();
 		}
 	}
 
@@ -53,7 +54,15 @@ public class Gelen extends Thread {
 			} catch(Exception e) {
 				e.printStackTrace();
 				hata++;
-				if(e instanceof SocketException) b.kapat();
+				if(e instanceof SocketException||e instanceof EOFException) {
+					b.kapat();
+					b.m.tekrarBaglanmakIstiyonMu();
+				} else {
+					if(hata>=10) {
+						b.kapat();
+						b.m.tekrarBaglanmakIstiyonMu();
+					}
+				}
 			}
 		}
 	}

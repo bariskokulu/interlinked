@@ -18,6 +18,7 @@ public class Giden extends Thread {
 		} catch (IOException e) {
 			e.printStackTrace();
 			b.kapat();
+			b.m.tekrarBaglanmakIstiyonMu();
 		}
 	}
 	
@@ -50,7 +51,10 @@ public class Giden extends Thread {
 					p.___deneme++;
 				} catch (Exception e) {
 					e.printStackTrace();
-					if(e instanceof SocketException) b.kapat();
+					if(e instanceof SocketException) {
+						b.kapat();
+						b.m.tekrarBaglanmakIstiyonMu();
+					}
 				}
 			}
 		}
