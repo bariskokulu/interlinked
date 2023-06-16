@@ -3,6 +3,7 @@ package bariss26.baglanti;
 import java.io.DataInputStream;
 import java.io.EOFException;
 import java.io.IOException;
+import java.net.SocketException;
 
 public class Gelen extends Thread {
 
@@ -52,7 +53,7 @@ public class Gelen extends Thread {
 			} catch(Exception e) {
 				e.printStackTrace();
 				hata++;
-				b.kapat();
+				if(e instanceof SocketException) b.kapat();
 			}
 		}
 	}

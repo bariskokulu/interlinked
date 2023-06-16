@@ -1,6 +1,7 @@
 package bariss26.baglanti;
 
 import java.net.Socket;
+import java.net.SocketException;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -30,7 +31,7 @@ public class Musteri extends DinleyicimVar {
 				} catch (Exception e) {
 					e.printStackTrace();
 					try {
-						if(b!=null) b.s.close();
+						if(b!=null) b.kapat();
 					} catch (Exception ee) {
 						ee.printStackTrace();
 					}
