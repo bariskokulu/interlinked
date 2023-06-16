@@ -11,6 +11,11 @@ plugins {
     id 'java-library'
 }
 
+version = "1.0"
+group = "bariss26.baglanti" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+archivesBaseName = "baglanti"
+jar.archiveFileName = "baglanti-${project.version}.jar"
+
 repositories {
     // Use Maven Central for resolving dependencies.
     mavenCentral()

@@ -14,6 +14,10 @@ public class Musteri extends DinleyicimVar {
 	public long tekrarbaglanmadanbekle;
 
 	public Musteri(String ip, int port, boolean gelen, boolean giden) {
+		this.ip = ip;
+		this.port = port;
+		this.gelen = gelen;
+		this.giden = giden;
 		firla();
 	}
 
