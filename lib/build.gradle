@@ -14,7 +14,7 @@ plugins {
 
 group = 'com.github.bariskokulu'
 
-version = "1.2.4"
+version = "1.2.5"
 // group = "bariss26.baglanti" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "interlinked"
 jar.archiveFileName = "interlinked-${project.version}.jar"
