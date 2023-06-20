@@ -1,5 +1,6 @@
 package bariss26.baglanti;
 
+import java.io.DataInputStream;
 import java.util.ArrayList;
 
 import com.google.common.primitives.Bytes;
@@ -235,19 +236,19 @@ public class ByteKumesi {
     }
 
     public final short shortOku() {
-        return (short)((okuIlerle() << 8) + (okuIlerle() << 0));
+        return (short)(((okuIlerle() & 0xFF) << 8) + ((okuIlerle() & 0xFF) << 0));
     }
 
     public final int isaretsizShortOku() {
-        return (okuIlerle() << 8) + (okuIlerle() << 0);
+        return ((okuIlerle()&0xFF) << 8) + ((okuIlerle() & 0xFF) << 0);
     }
 
     public final char charOku() {
-        return (char)((okuIlerle() << 8) + (okuIlerle() << 0));
+        return (char)(((okuIlerle() & 0xFF) << 8) + ((okuIlerle() & 0xFF) << 0));
     }
 
     public final int intOku() {
-        return ((okuIlerle() << 24) + (okuIlerle() << 16) + (okuIlerle() << 8) + (okuIlerle() << 0));
+        return (((okuIlerle() & 0xFF) << 24) + ((okuIlerle() & 0xFF) << 16) + ((okuIlerle() & 0xFF) << 8) + ((okuIlerle() & 0xFF) << 0));
     }
 
 //    private byte readBuffer[] = new byte[8];
